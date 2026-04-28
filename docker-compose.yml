@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  avibot:
+    build: .
+    image: avibot:latest
+    container_name: avibot
+    restart: unless-stopped
+    environment:
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
+      OPENSKY_USERNAME: ${OPENSKY_USERNAME:-}
+      OPENSKY_PASSWORD: ${OPENSKY_PASSWORD:-}
